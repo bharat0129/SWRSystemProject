@@ -1,0 +1,71 @@
+<html>
+  <body ng-app >
+    <div class="form-group">
+      <h1>Vendor Registration</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <!-- <img src="https://www.w3schools.com/w3images/avatar1.png" alt="Avatar" class="img"><br> -->
+      <!-- <form id="multipleUploadForm" name="multipleUploadForm"> -->
+        <label for="fname"><b>First Name</b></label>
+        <input type="text"   placeholder="Enter First Name" [(ngModel)]='vendor.firstname'  class="form-control"  >
+
+        <label for="lname"><b>Last Name</b></label>
+        <input type="text" placeholder="Enter Last Name" [(ngModel)]='vendor.lastname' required>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" [(ngModel)]='vendor.email' required>
+
+        <label for="mobileno"><b>Mobile No.</b></label>
+        <input type="number" placeholder="Enter Mobile No" [(ngModel)]='vendor.mobileno'  required>
+
+        <label for="address"><b>Address</b></label>
+        <input type="text" placeholder="Enter Address"  [(ngModel)]='vendor.address' required>
+
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" [(ngModel)]='vendor.password' required>
+
+        <label for="age"><b>Age</b></label>
+        <input type="number" placeholder="Enter Age" [(ngModel)]='vendor.age'  required>
+
+        <label for="skilldescription"><b>skill Description</b></label>
+        <input type="text" placeholder="Enter skill Description" [(ngModel)]='vendor.skilldescription'  required>
+
+        <label for="state">State</label>
+        <select class="dropdown" [(ngModel)]="vendor.fkstate" (change)="selectChangeForState()" >
+          <option>Select State</option>
+          <option *ngFor="let state of listofState">{{ state.statename }}</option>
+        </select>
+        <!-- name="fkstate.id" -->
+        <br>
+
+        <label for="skill">Skill</label>
+        <select class="dropdown" [(ngModel)]="vendor.fkskill" (change)="selectChangeForSkill()">
+          <option>Select Skill</option>
+          <option *ngFor="let skill of listofSkill">{{ skill.servicename }}</option>
+        </select>
+
+        <br>
+
+        <label for="city">City</label>
+        <select class="dropdown" [(ngModel)]="vendor.fkcity" (change)="selectChangeForCity()">
+          <option>Select City</option>
+          <option *ngFor="let city of listofCity">{{ city.cityname }}</option>
+        </select>
+
+        <label for="file">File</label>
+        <input type="file" (change)="onFileChange($event)">
+
+        <img [src]="imageSrc" *ngIf="imageSrc" style="height: 200px; width:300px"><br>
+        <hr>
+
+        <button type="submit" class="registerbtn" (click)='vendorRegistration()'>Register</button>
+        <br/>
+
+      <div class="container signin">
+        <p>Already have an account? <a [routerLink] ="'/app-login-page'">Log in</a>.</p>
+      </div>
+      <span> {{ result }} </span>
+    </div>
+
+  </body>
+</html>

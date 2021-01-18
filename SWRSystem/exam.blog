@@ -1,0 +1,6 @@
+23:11:15,438 DEBUG VendorImplementation:66 - Registration is started
+23:11:15,445 ERROR VendorImplementation:70 - Registration Failed
+23:14:39,652 DEBUG VendorImplementation:66 - Registration is started
+23:14:39,655 ERROR VendorImplementation:70 - Registration Failed
+23:14:39,962  WARN VendorImplementation:84 - we are testing logger
+23:14:39,966  INFO VendorImplementation:85 - Registraion done
