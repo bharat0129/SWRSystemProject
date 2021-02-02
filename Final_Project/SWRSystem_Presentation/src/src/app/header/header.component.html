@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header"></div>
+      <ul class="nav navbar-nav" *ngIf="!loginService.isUserLoggedIn()">
+        <li><a [routerLink]="'/app-home-page'">Home</a></li>
+        <li><a [routerLink]="'/app-about'">About Us</a></li>
+        <li><a [routerLink]="'/app-contact-us'">Contact</a></li>
+      </ul>
+      <span><a style="margin-left: 270px;" class="navbar-brand" href="app-home-page"
+          style="margin-left: 120mm;">SWRSystem</a></span>
+      <ul class="nav navbar-nav navbar-right" *ngIf="loginService.isUserLoggedIn()">
+        <li><a  [routerLink]="'/app-logout'"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        <li><a [routerLink]="'/app-parent-update'"><span class="glyphicon glyphicon-log-in"></span> Update Profile</a></li> 
+      </ul>
+      <ul class="nav navbar-nav navbar-right" *ngIf="!loginService.isUserLoggedIn()">
+        <li><a [routerLink]="'/app-register-page'"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+        <li><a [routerLink]="'/app-login'"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+</body>
+
+</html>

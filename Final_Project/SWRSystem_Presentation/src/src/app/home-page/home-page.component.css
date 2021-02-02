@@ -1,0 +1,62 @@
+.result-res
+{
+    margin-right: 50px;
+}
+
+.home-height
+{
+    height: 350px;
+}
+
+.card {
+    margin-right: 20mm;
+    text-align: left;
+    width: 100%;
+    background-color: rgb(188, 234, 255);
+    margin-bottom: 10px;
+    position:relative;
+    border-radius: 10mm;
+    
+  }
+
+  .container
+  {
+      height: 40mm;
+      margin-left: 5mm;
+      width: 98%;
+    
+  }
+
+  .text
+  {
+      text-align: left;
+      padding-right: 80px;
+  }
+
+
+.card2 {
+    margin-left: 2mm;
+    text-align: left;
+    width: 98%;
+    background-color: rgb(188, 234, 255);
+    position:relative;
+    height: 135mm;
+    border-radius: 10mm;
+    font-size: 20px;
+
+  }
+
+  .container2
+  {
+     
+      margin-left: 5mm;
+      width: 98%;
+  }
+
+  .text2
+  {
+      text-align: left;
+      padding-right: 90px;
+      padding-left: 90px;
+      
+  }

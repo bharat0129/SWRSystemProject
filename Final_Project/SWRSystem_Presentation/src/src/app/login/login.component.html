@@ -1,0 +1,26 @@
+<html>
+    <body>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        </head>
+        <h3 style="text-align: center;">Login</h3>
+        <div class="container">
+            <div class="img">
+                <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar" class="img"><br>
+              
+            </div>
+
+            <label for="uid">Mobile No</label>
+            <input type="text" [(ngModel)]='login.mobileno' placeholder="Enter Mobile No.">
+        
+            <label for="pass">Password</label>
+            <input type="password" [(ngModel)]='login.password' placeholder="Enter Password.">
+
+            <li><a  [routerLink] ="'/app- forgotten-password'">Forgotten password?</a></li><br>
+            <li><a [routerLink] ="'/app-register-page'"><span class="login-page"></span>Don't have an account? Register here</a></li>
+            <br>
+            <input type="submit" value="Login" (click)='Login()'>
+            <h4><span style="color: red;"> {{ result }} </span> </h4>
+        </div>
+    </body>
+</html>

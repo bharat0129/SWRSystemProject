@@ -1,0 +1,21 @@
+.body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+  }
+
+  .heading-group {
+      text-align: center;
+      font-style: italic;
+      margin-left: 100mm;
+  }
+  
+  .table
+  {
+    margin-left: 10mm;
+    color: blue;
+  }
+
+  th 
+  {
+    text-align: center;
+}

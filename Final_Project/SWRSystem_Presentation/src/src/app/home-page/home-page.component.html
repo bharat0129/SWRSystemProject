@@ -1,0 +1,36 @@
+<div class="container">
+    <div style="text-align: center;">
+    <h1>Welcome to SWRS</h1>
+
+<div class="card">
+    <div class="container">
+        <div class="text">
+            <h3 style="color: rgb(255, 0, 0);"> Skill Worker Recommendation System </h3>
+            
+            <span><h4>
+                Welcome to swrs this site will helps you to find skilled worker in your area.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae ab dicta Lorem ipsum dolor
+                consectetur adipisicing elit. Recusandae ab dicta Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae ab
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae ab dicta Lorem ipsum dolor, sit amet consectetur 
+                Recusandae ab dicta Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae ab dicta Recusandae ab dicta Lorem ipsum dolor  
+            </h4></span>
+        </div>
+    </div>
+</div>
+<div class="card2">
+    <div class="container2">
+        <div class="text2">
+        <br><br>
+        <div>
+            <h3 style="color: red;">Search Services</h3><input [(ngModel)] = 'skillobj.servicename' style="margin-right: 5mm;"/>
+            <span><button (click)='search()' style="background-color: rgb(156, 156, 156);">Search</button></span>       
+            <nav class="result-res">
+            <br>
+            <h4><span style="color: red;"> {{ result }} </span> </h4>
+            <p *ngFor="let y of city">
+            <li><button (click)='click()' style="background-color: rgb(156, 156, 156);">{{y.cityname}}</button></li>
+        </p>   
+          </nav>   
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<html>
+
+<body ng-app>
+  <div class="form-group">
+    <h2>Customer Registration</h2>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" [(ngModel)]='customer.customername' required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" [(ngModel)]='customer.email' required>
+
+    <label for="Mobile"><b>Mobile No.</b></label>
+    <input type="number" placeholder="Enter Mobile No" [(ngModel)]='customer.mobileno' required>
+
+    <label for="address"><b>Address</b></label>
+    <input type="text" placeholder="Enter Address" [(ngModel)]='customer.address' required>
+
+    <label for="City"><b>City</b></label>
+    <input type="text" placeholder="Enter City" [(ngModel)]='customer.city' required>
+
+    <label for="State"><b>State</b></label>
+    <input type="text" placeholder="Enter State" [(ngModel)]='customer.state' required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" [(ngModel)]='customer.password' required>
+
+    <hr>
+    <h4><span style="color: red;"> {{ result }} </span> </h4>
+    <button type="submit" class="registerbtn" (click)='customerRegistration()'>Register</button>
+    <BR />
+
+    <div class="container signin">
+      <p>Already have an account? <a [routerLink]="'/app-login'">Log in</a>.</p>
+    </div>
+  </div>
+</body>
+
+</html>

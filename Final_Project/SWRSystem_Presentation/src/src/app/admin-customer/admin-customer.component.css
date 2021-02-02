@@ -1,0 +1,18 @@
+
+.customer-page
+{
+    background-color: rgb(201, 201, 201);
+    margin-left: 5mm;
+    margin-right: 5mm;
+    border-radius: 5mm;
+    margin-bottom: 20mm;
+}
+
+.customer{
+    margin-left: 15mm;
+}
+
+.all-customer
+{
+    margin-left: 5%;
+}

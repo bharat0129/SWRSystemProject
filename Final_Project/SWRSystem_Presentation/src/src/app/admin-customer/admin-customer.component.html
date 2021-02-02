@@ -1,0 +1,99 @@
+<html>
+
+<body>
+    <div class="customer-page">
+    <!--------------------------------------------To Get Customers By City-------------------------------------------------------->
+    <div class="customer">
+        <b>City</b> <input placeholder="Enter City" [(ngModel)]='city.cityname' />
+        <button (click)='getCustomerByCity()' style="margin: 10px;">Search</button>
+        <nav class="result-res">
+        </nav>
+        <table border="1">
+            <thead>
+                <tr style="background: rgb(180, 231, 255);">
+                     <th width="10%" style="text-align: center;">Name</th>
+                    <th width="10%" style="text-align: center;">Email ID</th>
+                    <th width="10%" style="text-align: center;">Mobile No</th>
+                </tr>
+            </thead>
+            <tbody style="background: rgb(255, 253, 228);">
+                <ng-container *ngFor="let y of empty1">  
+                    <tr>
+                        <td align='center'>{{ y.Customer_Name }}</td>
+                        <td align='center'>{{ y.Email_Id }}</td>
+                        <td align='center'>{{ y.Mobile_No }}</td>
+                    </tr>
+            </ng-container>
+            </tbody>
+        </table>
+        <br><br><br>
+    
+    <!--------------------------------------------To Get Customers By State-------------------------------------------------------->
+    
+       <b> State</b> <input placeholder="Enter State" [(ngModel)]='state.statename' />
+        <button (click)='getCustomerByState()' style="margin: 10px;">Search</button>
+        <nav class="result-res">
+        </nav>
+        <table border="1">
+            <thead>
+                <tr style="background: rgb(180, 231, 255);">
+                    <th width="10%" style="text-align: center;">Name</th>
+                    <th width="10%" style="text-align: center;">Email ID</th>
+                    <th width="10%" style="text-align: center;">Mobile No</th>
+                </tr>
+            </thead>
+            <tbody style="background: rgb(255, 253, 228);">
+                <ng-container *ngFor="let y of empty2">  
+                    <tr>
+                        <td align='center'>{{ y.Customer_Name }}</td>
+                        <td align='center'>{{ y.Email_Id }}</td>
+                        <td align='center'>{{ y.Mobile_No }}</td>
+                    </tr>
+            </ng-container>
+            </tbody>
+        </table>
+        <br><br><br>
+    </div>
+
+    <!--------------------------------------------Delete Customer By Mobile No----------------------------------------------------->
+
+    <div class="customer">
+        <b> Delete </b><input placeholder="Enter Mobile Number" [(ngModel)]='cust.mobileno' />
+         <button (click)='DeleteCustomer()' style="margin: 10px;">Delete</button>
+         <nav class="result-res">
+            <h3><p style="color: red;">{{ result4 }} </p></h3>
+         </nav>
+     </div>
+
+
+    <!--------------------------------------------To Get All Customers--------------------------------------------------------->
+
+  <div class="all-customer">
+        <button (click)='getAllCustomers()'>Get All Customers</button>
+        <nav class="result-res">
+        </nav>
+   
+<h3 style="text-align: center;">List of Customers</h3>
+<table border="1">
+    <thead>
+        <tr style="background: rgb(180, 231, 255);">
+            <th width="10%" style="text-align: center;">Name</th>
+            <th width="10%" style="text-align: center;">Email ID</th>
+            <th width="10%" style="text-align: center;">Mobile No</th>
+        </tr>
+    </thead>
+    <tbody style="background: rgb(255, 253, 228);">
+        <ng-container *ngFor="let y of empty3">
+            
+            <tr>
+                <td align='center'>{{ y.Customer_Name }}</td>
+                <td align='center'>{{ y.Email_Id }}</td>
+                <td align='center'>{{ y.Mobile_No }}</td>
+            </tr>
+    </ng-container>
+    </tbody>
+</table>
+</div>
+</div>
+</body>`
+</html>

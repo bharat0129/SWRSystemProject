@@ -1,0 +1,36 @@
+<html>
+
+<body ng-app>
+  <div class="form-group">
+    <h2>Customer Update</h2>
+    <hr>
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" [(ngModel)]='this.cust.customername' class="form-control">
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" [(ngModel)]='this.cust.email' required>
+
+    <label for="Mobile"><b>Mobile No.</b></label>
+    <input type="number" placeholder="Enter Mobile No" [(ngModel)]='this.cust.mobileno' required >
+
+    <label for="address"><b>Address</b></label>
+    <input type="text" placeholder="Enter Address" [(ngModel)]='this.cust.address' required>
+
+    <label for="City"><b>City</b></label>
+    <input type="text" placeholder="Enter City" [(ngModel)]='this.cust.city' required>
+
+    <label for="State"><b>State</b></label>
+    <input type="text" placeholder="Enter State" [(ngModel)]='this.cust.state' required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="text" placeholder="Enter Password" [(ngModel)]='this.cust.password' required>
+
+    <hr>
+    <h4><span style="color: red;"> {{ result }} </span> </h4>
+    <button type="submit" class="registerbtn" (click)='UpdateCustomerDetails()'>Update</button>
+    <BR />
+
+  </div>
+</body>
+
+</html>

@@ -57,13 +57,16 @@ public class Vendor {
 	@Column(name = "Image")
 	private String image;
 
+	@Column(name = "Cost")
+	private Integer cost;
+	
 	public Vendor() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
 	public Vendor(Integer vendorid, String firstname, String lastname, String email, Long mobileno, String address,
-			String password, Integer age,String skilldescription, State fkstate, City fkcity, Skill fkskill, String image) {
+			String password, Integer age,String skilldescription, State fkstate, City fkcity, Skill fkskill, String image, Integer cost) {
 		super();
 		this.vendorid = vendorid;
 		this.firstname = firstname;
@@ -78,6 +81,7 @@ public class Vendor {
 		this.fkcity = fkcity;
 		this.fkskill = fkskill;
 		this.image = image;
+		this.cost=cost;
 	}
 
 	public Integer getVendorid() {
@@ -90,6 +94,14 @@ public class Vendor {
 
 	public String getFirstname() {
 		return firstname;
+	}
+
+	public Integer getCost() {
+		return cost;
+	}
+
+	public void setCost(Integer cost) {
+		this.cost = cost;
 	}
 
 	public void setFirstname(String firstname) {

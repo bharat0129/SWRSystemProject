@@ -1,0 +1,64 @@
+<html>
+
+<head></head>
+
+<body>
+    <div class="form-group">
+        <div class="heading-group">
+            <h1 >Vendor Search</h1>
+            <p>Please Select the Appropriate list</p>
+        </div>
+        <label for="state">State</label>
+        <select class="dropdown" [(ngModel)]="this.statename" (change)="selectChangeForState()">
+            <option>Select State</option>
+            <option *ngFor="let state of listofState">{{ state.statename }}</option>
+        </select>
+        <br>
+
+        <label for="city">City</label>
+        <select class="dropdown" [(ngModel)]="this.cityname" (change)="selectChangeForCity()">
+            <option>Select City</option>
+            <option *ngFor="let city of listofCity">{{ city.cityname }}</option>
+        </select>
+        <br>
+
+        <label for="skill">Skill</label>
+        <select class="dropdown" [(ngModel)]="this.servicename" (change)="selectChangeForSkill()">
+            <option>Select Skill</option>
+            <option *ngFor="let skill of listofSkill">{{ skill.servicename }}</option>
+        </select>
+        <br>
+
+        <h1 style="margin-left: 100mm;">List of Vendor</h1>
+        <div class="table">
+        <table border="2">
+            <thead>
+                <tr>
+                    <th width="10%">First Name</th>
+                    <th width="10%">Last Name</th>
+                    <th width="10%">Mobile_No</th>
+                    <th width="10%">Skill</th>
+                    <th width="10%">Cost(Per Hour)</th>
+                    <th width="10%">Buttons</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let y of vendor">
+                    <tr>
+                        <td align='center'>{{ y.firstname }}</td>
+                        <td align='center'>{{ y.lastname }}</td>
+                        <td align='center'>{{ y.mobileno }}</td>
+                        <td align='center'>{{ y.fkskill.servicename }}</td>
+                        <td align='center'>{{ y.cost }}</td>    
+                        <td align='center'><button (click)='VendorData(y.mobileno)'>View</button></td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+
+</body>
+
+</html>

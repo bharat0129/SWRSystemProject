@@ -1,0 +1,33 @@
+<html>
+<body>
+    <button (click)="GetVendorHireDetails()">Check Request</button>
+    <h1 align='center'>List of Request</h1>
+    <div class="table">
+        <table border="2">
+            <thead>
+                <tr>
+                    <th width="10%">Name</th>
+                    <th width="10%">Email_Id</th>
+                    <th width="10%">Mobile_No</th>
+                    <th width="10%">Address</th>
+                    <th width="10%">Button</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let y of hire">
+                    <tr>
+                        <td align='center'>{{ y.customerId.customername }}</td>
+                        <td align='center'>{{ y.customerId.email }}</td>
+                        <td align='center'>{{ y.customerId.mobileno }}</td>
+                        <td align='center'>{{ y.customerId.address }}</td>   
+                        <td align='center'>
+                            <button (click)='Accept(y.id)'>Accept</button>  |
+                            <button (click)='Reject(y.id)'>Reject</button>
+                        </td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

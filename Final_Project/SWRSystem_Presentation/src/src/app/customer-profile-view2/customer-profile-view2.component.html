@@ -1,0 +1,52 @@
+    <div class="clr">
+    <div class="form-group">
+        <h2 style="margin-left: 30mm;">Booking Details</h2>
+        <div class="controls">
+            <label for="name" style="margin-right: 20px;">First Name</label>
+            <input type="text" class="floatLabel"  [(ngModel)]='vendor.firstname' disabled>
+        </div>
+        <div class="controls">
+            <label for="name" style="margin-right: 20px;">Last Name</label>
+            <input type="text" class="floatLabel"  [(ngModel)]='vendor.lastname' disabled>
+        </div>
+        <div class="controls">
+            <label for="service" style="margin-right: 9px;">Service</label>
+            <input type="text" class="floatLabel"  [(ngModel)]='service.servicename' disabled>
+        </div>
+        <div class="controls">
+            <label for="cost" style="margin-right: 28px;">Cost</label>
+            <input type="number" class="floatLabel" [(ngModel)]='vendor.cost' disabled>
+        </div>
+        <div class="grid">
+            <div class="col-2-3">
+                <div class="controls">
+                    <label for="city" style="margin-right: 33px;">City</label>
+                    <input type="text" class="floatLabel" [(ngModel)]='city.cityname' disabled>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="grid">
+                <div class="col-1-4 col-1-4-sm">
+                    <div class="controls">
+                        <label for="date" class="label-date" style="margin-right: 20px;">
+                            <i class="fa fa-calendar"></i>&nbsp;&nbsp;Date</label>
+                        <input type="date" id="date" class="floatLabel" [(ngModel)]='date' >
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="col-2-3">
+                    <div class="controls">
+                        <label for="time" style="margin-right: 33px;">Time</label>
+                        <input class="floatLabel" type=time step=1 [(ngModel)]='time'>
+                    </div>
+                </div>
+            </div>
+            <br><br><br>
+
+            <button type="submit" value="Submit" class="btn" (click)="Hire()">Hire</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,107 @@
+<html>
+<body>
+    <div class="vendor-class">
+        <!--------------------------------------------To Get Vendors From City----------------------------------------------------->
+        <div class="vendor">
+            <b>City</b> <input placeholder="Enter City" [(ngModel)]='city.cityname' />
+            <button (click)='getVendorsByCity()' style="margin: 10px;">Search</button>
+            <nav class="result-res">
+            </nav>
+            <table border="1">
+                <thead>
+                    <tr style="background: rgb(180, 231, 255);">
+                        <th width="10%" style="text-align: center;">Name</th>
+                        <th width="10%" style="text-align: center;">Email ID</th>
+                        <th width="10%" style="text-align: center;">Mobile No</th>
+                    </tr>
+                </thead>
+                <tbody style="background: rgb(255, 253, 228);">
+                    <ng-container *ngFor="let y of empty1">
+                        <tr>
+                            <td align='center'>{{ y.First_Name }} {{ y.Last_Name }}</td>
+
+                            <td align='center'>{{ y.Email_Id }}</td>
+                            <td align='center'>{{ y.Mobile_No }}</td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+            <br><br><br>
+        </div>
+
+        <!--------------------------------------------To Get Vendors From State----------------------------------------------------->
+
+        <div class="vendor">
+            <b>State</b> <input placeholder="Enter State" [(ngModel)]='state.statename' />
+            <button (click)='getVendorsByState()' style="margin: 10px;">Search</button>
+            <nav class="result-res">
+                <br>
+                <p>{{ result2 }} </p>
+            </nav>
+            <table border="1">
+                <thead>
+                    <tr style="background: rgb(180, 231, 255);">
+                        <th width="10%" style="text-align: center;">Name</th>
+                        <th width="10%" style="text-align: center;">Email ID</th>
+                        <th width="10%" style="text-align: center;">Mobile No</th>
+                    </tr>
+                </thead>
+                <tbody style="background: rgb(255, 253, 228);">
+                    <ng-container *ngFor="let y of empty2">
+                        <tr>
+                            <td align='center'>{{ y.First_Name }} {{ y.Last_Name }}</td>
+
+                            <td align='center'>{{ y.Email_Id }}</td>
+                            <td align='center'>{{ y.Mobile_No }}</td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+            <br><br><br>
+        </div>
+
+        <!--------------------------------------------Delete Vendor By Mobile No----------------------------------------------------->
+
+        <div class="dlt-ven">
+            <b>Delete</b><input placeholder="Enter Mobile Number" [(ngModel)]='vend.mobileno' />
+            <button (click)='DeleteVendor()' class="delete" style="margin: 10px;"><b>Delete</b></button>
+            <nav class="result-res">
+                <br>
+                <h3 style="color: red;">
+                    <p>{{ result3 }} </p>
+                </h3>
+            </nav>
+        </div>
+
+        <!--------------------------------------------To Get All Vendors--------------------------------------------------------->
+
+        <div class="all-customer">
+            <button (click)='getAllVendors()'>Get All Vendors</button>
+            <nav class="result-res">
+            </nav>
+
+            <h3 style="text-align: center;">List of Vendors</h3>
+            <table border="1">
+                <thead>
+                    <tr style="background: rgb(180, 231, 255);">
+                        <th width="10%" style="text-align: center;">First Name</th>
+                        <th width="10%" style="text-align: center;">Last Name</th>
+                        <th width="10%" style="text-align: center;">Email ID</th>
+                        <th width="10%" style="text-align: center;">Mobile No</th>
+                    </tr>
+                </thead>
+                <tbody style="background: rgb(255, 253, 228);">
+                    <ng-container *ngFor="let y of empty3">
+                        <tr>
+                            <td align='center'>{{ y.First_Name }}</td>
+                            <td align='center'>{{ y.Last_Name }}</td>
+                            <td align='center'>{{ y.Email_Id }}</td>
+                            <td align='center'>{{ y.Mobile_No }}</td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+        </div>
+        </div>
+</body>
+</html>

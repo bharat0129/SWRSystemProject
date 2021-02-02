@@ -8,7 +8,8 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -23,7 +24,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Service
 public class VendorImplementation implements VendorInterface {
 
-	static Logger l = Logger.getLogger(VendorImplementation.class);
+	private static final Logger l = LoggerFactory.getLogger(VendorImplementation.class);
 
 	
 	@Autowired
@@ -61,7 +62,7 @@ public class VendorImplementation implements VendorInterface {
 			Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
 		} catch (IOException ioe) {
 			
-			l.error("ioexception",ioe);
+			l.warn("ioexception",ioe);
 			throw new IOException("Could not save image file: " + fileName, ioe);
 			
 		}
@@ -95,7 +96,7 @@ public class VendorImplementation implements VendorInterface {
 			
 		} catch (JsonProcessingException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
 			l.warn("Warning",e);
 			
 		}

@@ -1,6 +1,7 @@
 package com.example.SWRSystem.service;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +11,7 @@ import com.example.SWRSystem.repository.CustomerRepository;
 @Service
 public class CustomerImplementation implements CustomerInterface {
 
-	static Logger l = Logger.getLogger(CustomerImplementation.class);
+	private static final Logger l = LoggerFactory.getLogger(CustomerImplementation.class);
 	
 	@Autowired
 	private CustomerRepository customerrepo;

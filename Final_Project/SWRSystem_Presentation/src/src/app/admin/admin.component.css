@@ -1,0 +1,47 @@
+.register-page
+{
+  padding-top: 10%;
+  height: 200px;
+  margin-left: 10mm;
+}
+
+.btn1
+{
+  size: 2mm 30mm;
+  outline-width: 50mm;
+  line-height: 200px ; 
+  border-radius: 5mm;
+}
+
+.btn2
+{
+  size: 20mm;
+  outline-width: 50mm;
+  line-height: 200px ;
+  border-radius: 5mm;
+  width: 90px 90px;
+}
+
+.action_btn
+{
+  margin-top: 70mm;
+  margin-left: 170mm;
+}
+
+ .action_btn-cust {
+  width: 240px;
+  height: 240px;
+  background-color: rgb(183, 238, 255);
+  border-radius: 100%;
+  margin: 0 auto;
+}
+
+  .action_btn-vendor {
+    border-radius: 100%;
+    width: 240px;
+    height: 240px;
+    background-color: rgb(111, 255, 111);
+    box-shadow: rgb(2, 224, 224);
+    margin: 0 auto;}
+
+   

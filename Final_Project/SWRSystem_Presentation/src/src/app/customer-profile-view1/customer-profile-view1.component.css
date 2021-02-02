@@ -1,0 +1,41 @@
+.body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+  }
+
+  .heading-group {
+      text-align: center;
+      font-style: italic;
+      margin-left: 100mm;
+  }
+  
+  .form-group {
+      padding: 30px;
+      background-color: rgb(223, 223, 223);
+      margin-bottom: 10px;
+      line-height: 10mm;
+      padding-left: 12mm;
+      padding-right: 150mm;
+      border-radius: 4mm;
+    }
+  
+  .dropdown {
+      width: 50%;
+      padding: 10px;
+      margin: 2px 0 15px 0;
+      display: inline-block;
+       border: none; 
+      background: #f1f1f1;
+      border-radius: 4mm;
+      margin-left: 30mm;
+    }
+
+  .table
+  {
+    margin-left: 30mm;
+    color: blue;
+  }
+
+  th {
+    text-align: center;
+}
