@@ -8,11 +8,11 @@ app.use(bodyParser.json());
 //app.use(express.static('1.Presentation'));
 
 
-const mysql = require('mysql2');
+const mysql = require('mariadb');
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '6823',
+  password: '',
   database: 'swrsystem',
   port: 3306
 });

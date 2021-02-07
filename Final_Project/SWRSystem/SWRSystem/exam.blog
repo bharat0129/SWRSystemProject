@@ -1048,3 +1048,41 @@
 01:53:06,995  INFO StateImplementation:22 - List of state is displayed
 01:53:06,995  INFO CityImplementation:22 - List of city is displayed
 01:53:06,998  INFO SkillsImplementation:23 - List of skill is displayed
+12:33:41,887  INFO CityImplementation:22 - List of city is displayed
+12:33:41,887  INFO SkillsImplementation:23 - List of skill is displayed
+12:33:41,887  INFO StateImplementation:22 - List of state is displayed
+12:37:27,727 ERROR VendorImplementation:67 - Vendor Registration Failed
+12:37:27,960  INFO VendorImplementation:81 - Vendor registraion done
+12:37:27,961 DEBUG VendorImplementation:89 - Vendor registration status iscom.example.SWRSystem.service.Status@dbd26d2
+12:37:28,049 ERROR HireImplementation:34 - Vendor Login Failed
+12:37:28,097  INFO HireImplementation:41 - Vendor Deatils Fetch
+12:37:28,097 DEBUG HireImplementation:43 - Vendor Deatils Fetch status iscom.example.SWRSystem.service.Status@2f11d8a2
+12:37:36,713 ERROR HireImplementation:34 - Vendor Login Failed
+12:37:36,716  INFO HireImplementation:41 - Vendor Deatils Fetch
+12:37:36,716 DEBUG HireImplementation:43 - Vendor Deatils Fetch status iscom.example.SWRSystem.service.Status@6baa657e
+12:38:26,747  INFO CustomerImplementation:45 - Customer Login done
+12:38:26,748 DEBUG VendorImplementation:128 - Customer Login failed
+12:38:26,773  INFO StateImplementation:22 - List of state is displayed
+12:38:26,775  INFO CityImplementation:22 - List of city is displayed
+12:38:26,776  INFO SkillsImplementation:23 - List of skill is displayed
+12:38:49,898 DEBUG CustomerImplementation:73 - Customer Details Found
+12:39:23,489  INFO StateImplementation:22 - List of state is displayed
+12:39:23,496  INFO CityImplementation:22 - List of city is displayed
+12:39:23,509  INFO SkillsImplementation:23 - List of skill is displayed
+12:39:29,929  INFO StateImplementation:22 - List of state is displayed
+12:39:29,929  INFO SkillsImplementation:23 - List of skill is displayed
+12:39:29,929  INFO CityImplementation:22 - List of city is displayed
+12:39:30,763  INFO StateImplementation:22 - List of state is displayed
+12:39:30,764  INFO SkillsImplementation:23 - List of skill is displayed
+12:39:30,763  INFO CityImplementation:22 - List of city is displayed
+12:40:04,101 DEBUG CustomerImplementation:49 - Customer Login failed
+12:40:04,106  INFO VendorImplementation:124 - Vendor Login done
+12:40:04,133 ERROR VendorImplementation:136 - Vendor Login Failed
+12:40:04,136 ERROR HireImplementation:34 - Vendor Login Failed
+12:40:04,139  INFO HireImplementation:41 - Vendor Deatils Fetch
+12:40:04,140  INFO VendorImplementation:142 - Vendor Deatils Fetch
+12:40:04,140 DEBUG HireImplementation:43 - Vendor Deatils Fetch status iscom.example.SWRSystem.service.Status@30594d27
+12:40:04,141 DEBUG VendorImplementation:144 - Vendor Deatils Fetch status iscom.example.SWRSystem.service.Status@44a1d64c
+12:40:06,796 ERROR HireImplementation:34 - Vendor Login Failed
+12:40:06,830  INFO HireImplementation:41 - Vendor Deatils Fetch
+12:40:06,831 DEBUG HireImplementation:43 - Vendor Deatils Fetch status iscom.example.SWRSystem.service.Status@6a4ea45b
