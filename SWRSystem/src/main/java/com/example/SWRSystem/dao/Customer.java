@@ -36,11 +36,14 @@ public class Customer {
 	
 	@Column(name = "Password")
 	private String password;
+	
+	@Column(name = "password_token")
+	private String resetPasswordToken;
 
 	public Customer() { }
 
 	public Customer(Integer customerid, String customername, Long mobileno, String email, String address, String city,
-			String state, String password) {
+			String state, String password, String resetPasswordToken) {
 		super();
 		this.customerid = customerid;
 		this.customername = customername;
@@ -50,6 +53,7 @@ public class Customer {
 		this.city = city;
 		this.state = state;
 		this.password = password;
+		this.resetPasswordToken = resetPasswordToken;
 	}
 
 	public Integer getCustomerid() {
@@ -115,4 +119,21 @@ public class Customer {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public String getResetPasswordToken() {
+		return resetPasswordToken;
+	}
+
+	public void setResetPasswordToken(String resetPasswordToken) {
+		this.resetPasswordToken = resetPasswordToken;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [customerid=" + customerid + ", customername=" + customername + ", mobileno=" + mobileno
+				+ ", email=" + email + ", address=" + address + ", city=" + city + ", state=" + state + ", password="
+				+ password + ", resetPasswordToken=" + resetPasswordToken + "]";
+	}
+	
+	
 }

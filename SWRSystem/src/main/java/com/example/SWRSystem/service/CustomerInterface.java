@@ -6,5 +6,13 @@ public interface CustomerInterface {
 	
 	Status customerRegistration(Customer customer);
 	
-	Status customerUpdate(Customer customer);
+	Customer customerUpdate(Customer customer);
+	
+	Customer customerLogin(Login login);
+	
+	Customer customerDetails(Long mobileno);
+
+	Customer updateResetPasswordToken(String email, String token);
+
+	Customer updatePassword(String password, String token);
 }

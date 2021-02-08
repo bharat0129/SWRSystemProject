@@ -12,36 +12,36 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "vendor")
 public class Vendor {
-	
+
 	@Id
 	@Column(name = "Vendor_ID")
-	@GeneratedValue(strategy = GenerationType.IDENTITY  )
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer vendorid;
-	
+
 	@Column(name = "First_Name")
 	private String firstname;
-	
+
 	@Column(name = "Last_Name")
 	private String lastname;
-	
+
 	@Column(name = "Email_Id")
 	private String email;
-	
+
 	@Column(name = "Mobile_No")
 	private Long mobileno;
-	
+
 	@Column(name = "Address")
 	private String address;
-	
+
 	@Column(name = "Password")
 	private String password;
-	
+
 	@Column(name = "Age")
 	private Integer age;
-	
+
 	@Column(name = "Skill_Description")
 	private String skilldescription;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "State_ID")
 	private State fkstate;
@@ -53,20 +53,24 @@ public class Vendor {
 	@ManyToOne
 	@JoinColumn(name = "Service_ID")
 	private Skill fkskill;
-	
+
 	@Column(name = "Image")
 	private String image;
 
 	@Column(name = "Cost")
 	private Integer cost;
 	
+	@Column(name = "password_token")
+	private String resetPassToken;
+
 	public Vendor() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
 	public Vendor(Integer vendorid, String firstname, String lastname, String email, Long mobileno, String address,
-			String password, Integer age,String skilldescription, State fkstate, City fkcity, Skill fkskill, String image, Integer cost) {
+			String password, Integer age, String skilldescription, State fkstate, City fkcity, Skill fkskill,
+			String image, Integer cost, String resetPassToken) {
 		super();
 		this.vendorid = vendorid;
 		this.firstname = firstname;
@@ -81,7 +85,8 @@ public class Vendor {
 		this.fkcity = fkcity;
 		this.fkskill = fkskill;
 		this.image = image;
-		this.cost=cost;
+		this.cost = cost;
+		this.resetPassToken = resetPassToken;
 	}
 
 	public Integer getVendorid() {
@@ -94,14 +99,6 @@ public class Vendor {
 
 	public String getFirstname() {
 		return firstname;
-	}
-
-	public Integer getCost() {
-		return cost;
-	}
-
-	public void setCost(Integer cost) {
-		this.cost = cost;
 	}
 
 	public void setFirstname(String firstname) {
@@ -155,7 +152,7 @@ public class Vendor {
 	public void setAge(Integer age) {
 		this.age = age;
 	}
-	
+
 	public String getSkilldescription() {
 		return skilldescription;
 	}
@@ -187,12 +184,39 @@ public class Vendor {
 	public void setFkskill(Skill fkskill) {
 		this.fkskill = fkskill;
 	}
-	
-	public void setImage(String image) {
-		this.image = image;
-	}
 
 	public String getImage() {
 		return image;
 	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public Integer getCost() {
+		return cost;
+	}
+
+	public void setCost(Integer cost) {
+		this.cost = cost;
+	}
+
+	public String getResetPassToken() {
+		return resetPassToken;
+	}
+
+	public void setResetPassToken(String resetPassToken) {
+		this.resetPassToken = resetPassToken;
+	}
+
+	@Override
+	public String toString() {
+		return "Vendor [vendorid=" + vendorid + ", firstname=" + firstname + ", lastname=" + lastname + ", email="
+				+ email + ", mobileno=" + mobileno + ", address=" + address + ", password=" + password + ", age=" + age
+				+ ", skilldescription=" + skilldescription + ", fkstate=" + fkstate + ", fkcity=" + fkcity
+				+ ", fkskill=" + fkskill + ", image=" + image + ", cost=" + cost + ", resetPassToken=" + resetPassToken
+				+ "]";
+	}
+	
+	
 }

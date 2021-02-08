@@ -1,0 +1,6 @@
+
+<app-customer-update *ngIf="checkuser()" [cust]=this.cust></app-customer-update> 
+<!-- if checkuser return true then call the app-customer-update component -->
+
+<app-vendor-update *ngIf="!checkuser()" [ven]=this.ven></app-vendor-update>
+
