@@ -1,0 +1,316 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+						          Home Page :-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1) Service Table
+
+CREATE TABLE Skill
+(
+    Service_Name VARCHAR(30) NOT NULL,
+    Service_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+);
+
+mysql> desc Skill;
++--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| Service_Name | varchar(30) | NO   |     | NULL    |                |
+| Service_ID   | int(11)     | NO   | PRI | NULL    | auto_increment |
++--------------+-------------+------+-----+---------+----------------+
+
+ insert into Skill(Service_Name,Service_ID) Values('Plumber',1);
+
+insert into Skill(Service_Name,Service_ID) Values('Trainer',2);
+
+insert into Skill(Service_Name,Service_ID) Values('Maid',3);
+
+insert into Skill(Service_Name,Service_ID) Values('Guard',4);
+
+insert into Skill(Service_Name,Service_ID) Values('Electrician',5);
+
+select * from Skill;
++--------------+------------+
+| Service_Name | Service_ID |
++--------------+------------+
+| Plumber      |          1 |
+| Trainer      |          2 |
+| Maid         |          3 |
+| Guard        |          4 |
+| Electrician  |          5 |
++--------------+------------+
+
+2) State Table
+
+CREATE TABLE State 
+(
+    State_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    State_Name VARCHAR(30) NOT NULL
+);
+
+mysql> desc state;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| State_ID   | int(11)     | NO   | PRI | NULL    | auto_increment |
+| State_Name | varchar(30) | NO   |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+
+insert into State (State_Name) values('Maharashtra');
+
+insert into State (State_Name) values('Telangana');
+
+insert into State (State_Name) values('Karnataka');
+
+mysql> select * from state;
++----------+-------------+
+| State_ID | State_Name  |
++----------+-------------+
+|        1 | Maharashtra |
+|        2 | Telangana   |
+|        3 | Karnataka   |
++----------+-------------+
+ 
+3) City Table
+
+CREATE TABLE City
+(
+    City_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    City_Name VARCHAR(30) NOT NULL,
+    State_ID INT NOT NULL
+);
+
+ALTER TABLE  City ADD CONSTRAINT  FOREIGN KEY(State_ID) REFERENCES State(State_ID);
+
+mysql> desc city;
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| City_ID   | int(11)     | NO   | PRI | NULL    | auto_increment |
+| City_Name | varchar(30) | NO   |     | NULL    |                |
+| State_ID  | int(11)     | NO   | MUL | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+
+insert into city(City_Name,State_ID) values('Nagpur',1);
+
+insert into city(City_Name,State_ID) values('Mumbai',1);
+
+insert into city(City_Name,State_ID) values('Pune',1);
+
+insert into city(City_Name,State_ID) values('Bangalore',3);
+
+insert into city(City_Name,State_ID) values('Hyderabad',2);
+
+insert into city(City_Name,State_ID) values('Nashik',1);
+
+insert into city(City_Name,State_ID) values('wardha',1);
+
+mysql> select * from city;
++---------+-----------+----------+
+| City_ID | City_Name | State_ID |
++---------+-----------+----------+
+|       1 | Nagpur    |        1 |
+|       2 | Mumbai    |        1 |
+|       3 | Pune      |        1 |
+|       4 | Bangalore |        3 |
+|       5 | Hyderabad |        2 |
+|       6 | Nashik    |        1 |
+|       7 | wardha    |        1 |
++---------+-----------+----------+
+
+
+select c.City_Name , s.Service_Name from vendor v inner join city c on v.City_Id = c.City_Id inner join Skill s on 
+v.Service_Id = s.Service_Id where Service_Name = 'Plumber';
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+						Registration Page for Customer:-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1) Customer Table
+
+CREATE TABLE CUSTOMER( 
+    Customer_Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Customer_Name VARCHAR(50) NOT NULL,
+    Email_Id varchar(30) NOT NULL,
+    Mobile_No BIGINT  NOT NULL ,
+    Address VARCHAR(100) NOT NULL,
+    City VARCHAR(20) NOT NULL,
+    State VARCHAR(30) NOT NULL,
+    Password NVARCHAR(50) NOT NULL,
+    Password_Token VARCHAR(30)
+);
+
+mysql> desc customer;
++----------------+--------------+------+-----+---------+----------------+
+| Field          | Type         | Null | Key | Default | Extra          |
++----------------+--------------+------+-----+---------+----------------+
+| Customer_Id    | int          | NO   | PRI | NULL    | auto_increment |
+| Customer_Name  | varchar(50)  | NO   |     | NULL    |                |
+| Email_Id       | varchar(30)  | NO   |     | NULL    |                |
+| Mobile_No      | bigint       | NO   |     | NULL    |                |
+| Address        | varchar(100) | NO   |     | NULL    |                |
+| City           | varchar(20)  | NO   |     | NULL    |                |
+| State          | varchar(30)  | NO   |     | NULL    |                |
+| Password       | varchar(50)  | NO   |     | NULL    |                |
+| password_token | varchar(40)  | YES  |     | NULL    |                |
++----------------+--------------+------+-----+---------+----------------+
+
+insert into customer (Customer_Name,Email_Id, Mobile_No,Address,City,State,Password) values('Ajinkya Sagane', 'Saganeajinkya2@gmail.com', 9960778318, 'Balaji plot rajapeth','Amravati','Maharashtra','123ewer3');
+insert into customer(Customer_Name,Email_Id, Mobile_No,Address,City,State,Password) values('Pratik Gawande', 'pratikgawande@gmail.com', 9785224565, 'Rathi Nagar','Amravati','Maharashtra','pratik12@we'); 
+insert into customer( Customer_Name,Email_Id, Mobile_No,Address, City,State, Password) values('Yash Nemade', 'yashnemade@gmail.com', 7703245532,'Sharda Nagar','Amravati','Maharashtra','yash123@');
+
+{
+    "cname": "Mohit Potode",
+    "email":"mohitpotode@gmail.com",
+    "mobileno":9823589342,
+    "address":"Mudhalkar Peth Hvpm Road",
+    "city":"Nagpur",
+    "state":"Maharashtra",
+    "password": "mohit@4566"
+}
+
+{
+    "cname": "Kaushal Mundhada",
+    "email":"kaushalmundhada@gmail.com",
+    "mobileno":8446475321,
+    "address":"Mudhalkar Peth Hvpm Road",
+    "city":"Amravati",
+    "state":"Maharashtra",
+    "password": "kaushal@12345"
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+						Registration Page for Service :-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1) Vendor Table
+
+CREATE TABLE VENDOR( 
+   Vendor_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    First_Name VARCHAR(50) NOT NULL,
+    Last_Name VARCHAR(50) NOT NULL,
+    Email_Id VARCHAR(30) NOT NULL,
+    Mobile_No BIGINT  NOT NULL,
+    Address VARCHAR(100) NOT NULL,
+    Password NVARCHAR(50) NOT NULL,
+    Age INT(10) NOT NULL,
+    Service_ID INT(10) NOT NULL,
+    Skill_Description VARCHAR(50),
+    City_ID INT(10) NOT NULL,
+    State_ID INT(10) NOT NULL,
+    Image VARCHAR(64),
+    Cost  INT(20) NOT NULL,
+    Password_Token VARCHAR(30)
+);
+
+ALTER TABLE VENDOR ADD CONSTRAINT  FOREIGN KEY(State_ID) REFERENCES State(State_ID);
+ALTER TABLE VENDOR ADD CONSTRAINT  FOREIGN KEY(City_ID) REFERENCES City(City_ID);
+ALTER TABLE VENDOR ADD CONSTRAINT  FOREIGN KEY(Service_ID) REFERENCES Skill(Service_ID);
+
+mysql> desc vendor;
++-------------------+--------------+------+-----+---------+----------------+
+| Field             | Type         | Null | Key | Default | Extra          |
++-------------------+--------------+------+-----+---------+----------------+
+| Vendor_ID         | int          | NO   | PRI | NULL    | auto_increment |
+| First_Name        | varchar(50)  | NO   |     | NULL    |                |
+| Last_Name         | varchar(50)  | NO   |     | NULL    |                |
+| Email_Id          | varchar(30)  | NO   |     | NULL    |                |
+| Mobile_No         | bigint       | NO   |     | NULL    |                |
+| Address           | varchar(100) | NO   |     | NULL    |                |
+| Password          | varchar(50)  | NO   |     | NULL    |                |
+| Age               | int          | NO   |     | NULL    |                |
+| Service_ID        | int          | NO   | MUL | NULL    |                |
+| City_ID           | int          | NO   | MUL | NULL    |                |
+| State_ID          | int          | NO   | MUL | NULL    |                |
+| Image             | varchar(100) | YES  |     | NULL    |                |
+| Skill_Description | varchar(100) | NO   |     | NULL    |                |
+| Cost              | int          | NO   |     | NULL    |                |
+| password_token    | varchar(40)  | YES  |     | NULL    |                |
++-------------------+--------------+------+-----+---------+----------------+
+
+
+insert into vendor(First_Name,Last_Name,Email_Id,Mobile_No,Address,Password,Age,State_ID,Service_ID,City_ID) values
+('Vinod','Raj','vinodraj@gmail.com',9763452212,'New Ganesh Colony,Layout 3','vindo@123',25,1,1,5);
+
+insert into vendor(First_Name,Last_Name,Email_Id,Mobile_No,Address,Password,Age,State_ID,Service_ID,City_ID) values
+('Kaustubh','Rathi','kaustubhrathi@gmail.com',7852587415,'Hvpm Road Near Amba Devi','kaustubh@123',28,2,5,7);
+
+insert into vendor(First_Name,Last_Name,Email_Id,Mobile_No,Address,Password,Age,State_ID,Service_ID,City_ID) values
+('Nitin',' Mate','nitinmate@gmail.com',7412369852,'V.M.V College Panchawati Chowk','mate@123',24,3,3,2);
+
+{
+"firstname" : "Raju",
+"lastname":"Malode",
+"email" : "rajumalode@gmail.com",
+"mobileno":1234567891,
+"address":"Ring Road,Near Ravi Nagar Bus Stop Adarsh Apartment",
+"password":"abc@123",
+"age":32,
+"fkstate":{"id":1},
+"fkcity":{"cityid":1},
+"fkskill":{"serviceid":1}
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+					                       Login Page:-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+					                       Update Page:-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+						Customer Profile View 1:-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1) select v  from Vendor v where v.fkstate IN (select s.id from State s where s.statename like :x% ) 
+
+2) select * from vendor where City_ID = 1 or State_ID = 2;
+    
+    select * from vendor where City_ID IN (Select City_ID from City where City_Name = 'Nagpur') And
+    State_ID IN (Select State_ID from State where State_Name = 'Maharashtra')
+
+    select v from Vendor v where v.fkcity IN (Select c.cityid from City c where c.cityname = :x) OR v.fkstate IN (Select s.id from State s where s.statename = :y)
+
+    select v from Vendor v where v.fkcity IN (Select c.cityid from City c where c.cityname  like :x%) OR v.fkstate IN (Select s.id from State s where s.statename like :y%)
+
+3)  select * from vendor where 
+     City_ID IN (Select City_ID from City where City_Name = 'Nagpur') And
+     State_ID IN (Select State_ID from State where State_Name = 'Maharashtra') And 
+     Service_ID IN (select Service_ID from Skill where Service_Name = 'Plumber');
+
+     select v from Vendor v where 
+     v.fkcity IN (Select c.cityid from City c where c.cityname = :x) and
+     v.fkstate IN (Select s.id from State s where s.statename = :y) and 
+     v.fkskill  IN (select s.serviceid from Skill s where s.servicename = :z);
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+						Custom Profile View 2:-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+					                        Hire Table:-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Create table hire (
+Request_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+Vendor_ID INT NOT NULL,
+Customer_ID INT NOT NULL,
+Hire_Date Date NOT NULL,
+Request_Time Time NOT NULL,
+Status varchar(40)
+);
+
+ALTER TABLE  HIRE ADD CONSTRAINT  FOREIGN KEY(Vendor_ID) REFERENCES Vendor(Vendor_ID);
+ALTER TABLE HIRE ADD CONSTRAINT  FOREIGN KEY(Customer_ID) REFERENCES Customer(Customer_ID);
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+						Vendor Profile View 1:-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
